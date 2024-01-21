@@ -81,10 +81,12 @@ while not salir:
             pc.copy( result['data'][0]['data'][int(copiar)])
             print(f"Se ha copiado [ {result['data'][0]['data'][int(copiar)]} ] al portapapeles")
             print()
-        else:
-            r = subprocess.check_output(operation[op], shell=True, text=True)
+        elif op == "2":
+            r = subprocess.check_output(delete_command, shell=True, text=True)
             result = json.loads(r)
-            print("Respuesta de curl:", result)
+            print(result)
+        else:
+            pass
         
         print()
         salir = input("###### SALIR(1) ######" ) == "1"
